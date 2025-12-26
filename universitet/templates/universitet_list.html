@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitetlar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-100 via-purple-200 to-purple-100 min-h-screen font-sans">
+
+    <header class="text-center py-12">
+        <h1 class="text-5xl font-extrabold text-purple-800">Universitetlar Ro'yxati</h1>
+        <p class="text-gray-700 mt-2 text-lg">O‘zbekiston universitetlari haqida eng to‘liq ma’lumotlar</p>
+    </header>
+
+    <main class="container mx-auto px-6 grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {% for universitet in universitetlar %}
+        <div class="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+            <h2 class="text-2xl font-bold text-purple-600 mb-4">{{ universitet.name }}</h2>
+            <p class="text-gray-700"><strong>Manzil:</strong> {{ universitet.manzil }}</p>
+            <p class="text-gray-700"><strong>O‘quvchilar soni:</strong> {{ universitet.oquvchilar_soni }}</p>
+            <p class="text-gray-500 mt-2"><strong>Yaratilgan vaqti:</strong> {{ universitet.created_at }}</p>
+        </div>
+        {% empty %}
+        <p class="text-center col-span-3 text-gray-600">Universitet topilmadi</p>
+        {% endfor %}
+    </main>
+
+    <footer class="text-center py-6 mt-12 text-gray-500">
+        &copy; 2025 Universitetlar Ilovasi
+    </footer>
+
+</body>
+</html>
