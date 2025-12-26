@@ -22,4 +22,4 @@ class Direktor(models.Model):
     yaratilgan_vaqti = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.oylik
+        return f"Direktor {self.id}"

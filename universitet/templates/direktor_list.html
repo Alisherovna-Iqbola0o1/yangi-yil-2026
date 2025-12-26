@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitet Direktorlar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-orange-100 via-orange-200 to-orange-100 min-h-screen font-sans">
+
+    <!-- Header -->
+    <header class="text-center py-12">
+        <h1 class="text-5xl font-extrabold text-orange-800">Universitet Direktorlar</h1>
+        <p class="text-gray-700 mt-2 text-lg">Eng sifatli va batafsil ma’lumotlar</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {% for direktor in direktorlar %}
+        <div class="bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 hover:shadow-3xl transition-all duration-300">
+            <div class="flex items-center mb-4">
+                <div class="bg-orange-200 rounded-full w-16 h-16 flex items-center justify-center text-orange-700 font-bold text-xl">
+                    {{ direktor.id }}
+                </div>
+                <div class="ml-4">
+                    <h2 class="text-2xl font-semibold text-orange-700">{{ direktor.id }} - Direktor</h2>
+                    <p class="text-gray-500 text-sm">Yaratilgan vaqti: {{ direktor.yaratilgan_vaqti }}</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mb-2"><strong>Oylik:</strong> ${{ direktor.oylik }}</p>
+            <p class="text-gray-700"><strong>Ishga kelgan vaqti:</strong> {{ direktor.ishga_kelgan_vaqti }}</p>
+        </div>
+        {% empty %}
+        <p class="text-center col-span-3 text-gray-600">Direktor topilmadi</p>
+        {% endfor %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 mt-12 text-gray-500">
+        &copy; 2025 Universitet Direktorlar Ilovasi
+    </footer>
+
+</body>
+</html>
