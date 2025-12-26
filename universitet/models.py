@@ -1,12 +1,6 @@
 from django.db import models
 from django import User
 
-# Create your models here.
-# 2: Universitet class  name, manzil, oquvchilar soni, maktab-ochilgan-vaqt, yaratilgan vaqt  Direktor class 
-# forinkey user, oylik, ishga-kelgan-vaqt, yaratilgan vaqt
-# 2: universitet va direktor nomli classlarni yaratib bo'lib makemigrations va migrate qiling. 
-# admin.py faylga ham qoshing va admin panelga kirib bittadan malumot qoshing.
-
 class Universitet(models.Model):
     name = models.CharField(max_length=255)
     manzil = models.CharField(max_length=100)
