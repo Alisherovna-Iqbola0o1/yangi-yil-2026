@@ -23,4 +23,18 @@ def __str__(self):
     return self.user
 
 
+class Oqituvchi(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    yosh = models.PositiveIntegerField()
+    oylik_maosh = models.IntegerField()
+    ustoz_haqida = models.TextField()
+    ishga_kirgan_vaqti = models.DateField()
+    oquvchilar_soni = models.PositiveIntegerField()
+    yaratilgan_vaqti = models.DateTimeField(auto_now_add=True)
+    ozgartirilgan_vaqti = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user
+
+
 
