@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direktorlar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-green-100 via-green-200 to-green-100 min-h-screen font-sans">
+    <header class="text-center py-10">
+        <h1 class="text-5xl font-extrabold text-green-800">Direktorlar Ro'yxati</h1>
+        <p class="text-gray-700 mt-2">Maktab direktorlarining ma'lumotlari</p>
+    </header>
+
+    <main class="container mx-auto px-6 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {% for direktor in direktorlar %}
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+            <h2 class="text-2xl font-bold text-green-600 mb-2">{{ direktor.user.username }}</h2>
+            <p class="text-gray-700"><strong>Oylik:</strong> ${{ direktor.oylik }}</p>
+            <p class="text-gray-700"><strong>Ishga kelgan vaqti:</strong> {{ direktor.ishga_kelgan_vaqt }}</p>
+        </div>
+        {% empty %}
+        <p class="text-center col-span-3 text-gray-600">Direktor topilmadi</p>
+        {% endfor %}
+    </main>
+
+    <footer class="text-center py-6 mt-10 text-gray-500">
+        &copy; 2025 Direktorlar Ilovasi
+    </footer>
+</body>
+</html>
