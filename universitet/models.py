@@ -1,6 +1,11 @@
 from django.db import models
 from django import User
 
+<<<<<<< HEAD
+=======
+# Create your models here.
+
+>>>>>>> 69679ab3b8bd6689f570bcb92d0d43e29a496db1
 class Universitet(models.Model):
     name = models.CharField(max_length=255)
     manzil = models.CharField(max_length=100)
