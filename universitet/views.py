@@ -1,9 +1,11 @@
-from django.shortcuts import render
-
 # Create your views here.
+from django.shortcuts import render
+from .models import Universitet, Direktor
 
-def A(request):
-     return render(request, "Universitet.html")
+def universitet_list(request):
+    universitetlar = Universitet.objects.all()
+    return render(request, "universitet_list.html", {"universitetlar": universitetlar})
 
-def B(request):
-     return render(request, "Direktor.html")
+def direktor_list(request):
+    direktorlar = Direktor.objects.all()
+    return render(request, "direktor_list.html", {"direktorlar": direktorlar})
